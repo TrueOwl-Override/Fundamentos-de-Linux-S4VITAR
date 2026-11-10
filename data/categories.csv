@@ -1,0 +1,24 @@
+Part,Category,Emoji,Description
+Linux Commands,Navigation & Files,📁,"Move around the filesystem and create, copy, delete and inspect files and folders."
+Linux Commands,Viewing & Editing Files,📝,"Read files in the terminal, page through output, compare files and edit text."
+Linux Commands,Searching,🔍,Find files anywhere on the system and locate where commands live.
+Linux Commands,Text Processing,✂️,"Filter, cut, transform and sort text coming from files or other commands."
+Linux Commands,"Pipes, Redirection & Operators",🔀,"Chain commands, decide where output and errors go, and run things in the background."
+Linux Commands,Users & Groups,👤,"Check who you are, switch users, and manage accounts, passwords and groups."
+Linux Commands,Permissions & Attributes,🔐,"Control who can read, write and run files, plus special attributes and capabilities."
+Linux Commands,Shell & Environment,🐚,"Shell settings, environment variables, aliases and handy history shortcuts."
+Linux Commands,Processes & Scheduling,⏱️,"See what's running, limit or repeat commands, and schedule jobs with cron."
+Linux Commands,Networking,🌐,"Network interfaces, open ports and sockets, and raw connections with netcat."
+Linux Commands,SSH & Remote Access,🔑,Connect to remote machines and manage SSH keys.
+Linux Commands,"Binary, Encoding & Compression",🧬,"Inspect binary data, convert between formats, hash files and work with archives."
+Linux Commands,System & Packages,📦,"Update the system, manage packages and check system info."
+Linux Commands,Git,🌿,"Version control: clone projects, explore history, work with branches and publish changes."
+Bash Scripting,Script Basics,📜,"The building blocks of every script: the shebang, exit codes, command substitution and subshells."
+Bash Scripting,Variables & Arithmetic,📦,"Store values in variables, read them back and do math with them."
+Bash Scripting,Arguments & Options,🎯,Read what's passed to your script: positional arguments and flags parsed with getopts.
+Bash Scripting,Conditionals,🔀,Make decisions with if and case.
+Bash Scripting,Loops & Sequences,🔁,"Repeat work with for and while, and generate sequences to loop over."
+Bash Scripting,Functions & Signals,🧩,Group commands into functions and react to signals like Ctrl+C.
+Bash Scripting,"Jobs, Temp Files & Terminal",⚙️,"Wait for background jobs, set time limits, create temp files and control the cursor."
+Bash Scripting,Networking in Bash,🌐,Open TCP connections from pure Bash and make HTTP requests.
+Bash Scripting,Helper Tools,🛠️,Handy tools for reading and prettifying code while you script.

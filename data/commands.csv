@@ -1,0 +1,135 @@
+Category,Command,Description,Example
+Navigation & Files,pwd,Shows the full path of the current directory,pwd
+Navigation & Files,ls,Lists the files and folders in the current directory,ls /etc
+Navigation & Files,cd,Changes directory,cd /var/log
+Navigation & Files,mkdir,Creates a new folder,mkdir projects
+Navigation & Files,touch,"Creates an empty file, or updates its modification date if it already exists",touch new.txt
+Navigation & Files,cp,Copies files or folders from one place to another,cp file.txt copy.txt
+Navigation & Files,rm,Deletes files or folders,rm old.txt
+Navigation & Files,file,"Analyzes a file and tells you what kind of content it has, regardless of its extension",file image.png
+Navigation & Files,stat,"Shows detailed info about a file or directory: permissions, size and access/modification dates",stat file.txt
+Navigation & Files,*,"Wildcard that matches anything, to select several files at once",ls *.txt
+Viewing & Editing Files,cat,Prints a file's contents to the terminal,cat notes.txt
+Viewing & Editing Files,more,"Shows a command's output or a file one page at a time (space to advance, q to quit)",cat /etc/passwd | more
+Viewing & Editing Files,head,Shows the first lines of a file or text (10 by default),head -n 1 file.txt
+Viewing & Editing Files,tail,"Shows the last lines of a file (10 by default), useful for logs",tail /var/log/syslog
+Viewing & Editing Files,rev,"Reverses the characters of each line, showing the text backwards","echo ""hello"" | rev"
+Viewing & Editing Files,diff,Compares two files line by line and shows the differences between them,diff file1.txt file2.txt
+Viewing & Editing Files,nano,Simple text editor in the terminal,nano notes.txt
+Viewing & Editing Files,vi,"Advanced, powerful text editor with a steeper learning curve than nano",vi notes.txt
+Searching,find,"Searches for files and folders by criteria (name, type, permissions, date, etc.)","find /home -name ""*.txt"""
+Searching,grep,Searches and filters lines of text that match a pattern,"grep ""error"" log.txt"
+Searching,which,Shows where a command or program is installed,which python3
+Searching,command,"With -v, shows the path of a command, similar to which",command -v python3
+Searching,xargs,Takes a command's output and uses it as the arguments of another command,"find . -name ""*.log"" | xargs ls -l"
+Text Processing,echo,Prints text or a variable's value to the terminal,"echo ""Hello world"""
+Text Processing,awk,Processes and filters text by columns,awk '{print $2}' data.txt
+Text Processing,cut,"Extracts parts of a line of text, splitting it by a delimiter","cut -d "":"" -f 1 /etc/passwd"
+Text Processing,tr,Translates or replaces characters of the incoming text with others,"echo ""a:b:c"" | tr ':' ' '"
+Text Processing,sed,"Finds, replaces, deletes or modifies text in a file or stream, usually with regular expressions",sed 's/old/new/g' file.txt
+Text Processing,sort,"Sorts the lines of a file or text, alphabetically or numerically",sort names.txt
+Text Processing,uniq,Removes consecutive duplicate lines; usually used after sort,sort names.txt | uniq
+Text Processing,tee,Shows a command's output on screen and saves it to a file at the same time,ls | tee list.txt
+Text Processing,sponge,"Reads all of its input before writing it to a file, avoiding problems when overwriting the same file you're reading",sort data.txt | sponge data.txt
+Text Processing,column,"Arranges incoming text into aligned columns, like a table",cat /etc/passwd | column -t -s ':'
+"Pipes, Redirection & Operators",|,Pipe: sends one command's output as the next command's input,cat /etc/passwd | grep root
+"Pipes, Redirection & Operators",;,Runs commands in sequence whether or not the previous one failed,cd /tmp ; ls
+"Pipes, Redirection & Operators",&&,Runs the next command only if the previous one succeeded,mkdir test && cd test
+"Pipes, Redirection & Operators",||,Runs the next command only if the previous one failed,"ping -c 1 8.8.8.8 || echo ""no connection"""
+"Pipes, Redirection & Operators",&,"Runs the command in the background, leaving the terminal free",sleep 60 &
+"Pipes, Redirection & Operators",>,"Redirects output to a file, overwriting its contents","echo ""hello"" > file.txt"
+"Pipes, Redirection & Operators",>>,"Redirects output to a file, appending it to the end","echo ""another line"" >> file.txt"
+"Pipes, Redirection & Operators",2>/dev/null,Sends errors (stderr) to /dev/null so they aren't shown,"find / -name ""*.conf"" 2>/dev/null"
+"Pipes, Redirection & Operators",2>&1,"Redirects stderr to stdout, showing everything together",ls /doesnotexist > output.txt 2>&1
+"Pipes, Redirection & Operators",&>/dev/null,"Sends both normal output and errors to /dev/null, hiding everything",ping -c 1 8.8.8.8 &>/dev/null
+"Pipes, Redirection & Operators",exec,"Manipulates the current session's file descriptors (open, close, redirect)",exec 3<> file.txt
+"Pipes, Redirection & Operators",disown,Detaches a background process from the terminal so it keeps running after you close it,sleep 100 & disown
+Users & Groups,whoami,Shows the name of the user you're currently logged in as,whoami
+Users & Groups,id,"Shows user info: UID, GID and the groups they belong to",id root
+Users & Groups,sudo,Runs a single command with administrator privileges without switching users,sudo apt update
+Users & Groups,su,"Switches to another user in the terminal, asking for their password",su - john
+Users & Groups,useradd,Creates a new user on the system,sudo useradd john
+Users & Groups,usermod,"Modifies an existing user's properties (group, home, shell)",sudo usermod -s /bin/zsh john
+Users & Groups,passwd,Sets or changes a user's password,sudo passwd john
+Users & Groups,groupadd,Creates a new group on the system,sudo groupadd developers
+Permissions & Attributes,chmod,Changes the permissions of a file or folder; + adds and - removes a permission,chmod 755 script.sh
+Permissions & Attributes,chown,Changes the owner and/or owning group of a file or folder,sudo chown john:developers file.txt
+Permissions & Attributes,chgrp,Changes the group that owns a file or folder,chgrp developers file.txt
+Permissions & Attributes,lsattr,Shows a file's special attributes (beyond the normal permissions),lsattr file.txt
+Permissions & Attributes,chattr,Changes a file's special attributes (for example making it immutable),sudo chattr +i file.txt
+Permissions & Attributes,getcap,Shows the capabilities assigned to a file,getcap /usr/bin/ping
+Permissions & Attributes,setcap,Assigns specific capabilities to a file without granting full root privileges,sudo setcap cap_net_raw+ep /usr/bin/ping
+Shell & Environment,bash,"Bash, the shell that runs what you type; launching it starts a new shell, useful to get an interactive shell, run scripts or escape restricted shells",bash
+Shell & Environment,export,"Turns a variable into an environment variable, available to other processes started from that terminal",export TERM=xterm
+Shell & Environment,alias,Creates a shortcut so a short word runs a longer command,alias ll='ls -la'
+Shell & Environment,!$,"Stands for the last argument of the previous command, so you can reuse it",mkdir project  then  cd !$
+Shell & Environment,!?,Finds the most recent command in your history containing the given text and runs it again,!?ssh
+Shell & Environment,Ctrl + L,Shortcut that clears the terminal screen without losing your history,Ctrl + L (same as typing clear)
+Processes & Scheduling,ps,Shows the processes running on the system,ps
+Processes & Scheduling,sleep,Pauses for a given number of seconds,sleep 5
+Processes & Scheduling,timeout,Runs a command and kills it automatically if it goes over the given time,timeout 5 ping 8.8.8.8
+Processes & Scheduling,watch,Runs a command repeatedly at regular intervals and shows its updated output,watch ls -l /tmp
+Processes & Scheduling,crontab,"Lets you view, create and edit a user's Cron jobs (scheduled tasks)",crontab -l
+Networking,hostname,Shows or changes the machine's network name,hostname
+Networking,ifconfig,Shows and configures network interfaces (the IP of each card),ifconfig eth0
+Networking,iwconfig,"Like ifconfig, but for wireless (Wi-Fi) interfaces",iwconfig wlan0
+Networking,ss,"Shows information about active network sockets, a modern alternative to netstat",ss
+Networking,lsof,"Lists the files opened by running processes, including network connections",lsof /var/log/syslog
+Networking,nc,"Netcat: creates manual TCP/UDP connections to send and receive data, scan ports or open remote shells",nc 192.168.1.10 80
+Networking,ncat,Improved netcat (from the Nmap project) with SSL/TLS encryption and authentication support,ncat 192.168.1.10 4444
+SSH & Remote Access,ssh,"Connects remotely and securely to another machine over the network, using a password or an SSH key",ssh user@192.168.1.10
+SSH & Remote Access,sshpass,Passes the SSH password directly in the command; handy for automation,sshpass -p 'my_password' ssh user@192.168.1.10
+SSH & Remote Access,ssh-keygen,Generates an SSH key pair (public and private) to log in without a password,ssh-keygen -t ed25519
+SSH & Remote Access,ssh-copy-id,Copies your SSH public key to a remote server's authorized_keys,ssh-copy-id user@192.168.1.10
+"Binary, Encoding & Compression",strings,Shows the readable text strings (ASCII) inside a binary file; useful for finding hidden info,strings program.bin
+"Binary, Encoding & Compression",xxd,Shows a file's contents in hexadecimal,xxd file.bin
+"Binary, Encoding & Compression",ghex,Hex editor with a graphical interface to view and modify a file's bytes,ghex file.bin
+"Binary, Encoding & Compression",base64,"Encodes text or a file to Base64, or decodes it back to its original form, depending on the flag","echo ""hello"" | base64"
+"Binary, Encoding & Compression",md5sum,"Calculates the MD5 hash of a file or input, useful to check whether its content has changed",md5sum file.txt
+"Binary, Encoding & Compression",bc,"Terminal calculator; does arithmetic and converts numbers between bases (hexadecimal, decimal)","echo ""obase=10; ibase=16; FF"" | bc"
+"Binary, Encoding & Compression",7z,Compresses and extracts .7z archives,7z a backup.7z folder/
+System & Packages,apt,Debian's package manager: refreshes the package list (update) and installs available updates (upgrade),sudo apt update
+System & Packages,parrot-upgrade,Safely upgrades Parrot OS without breaking its own components,sudo parrot-upgrade
+System & Packages,reboot,Restarts the machine,sudo reboot
+System & Packages,neofetch,"Shows system info (kernel, RAM, CPU, distro logo) in a visual way",neofetch
+Git,git clone,"Downloads a full copy of a remote repository (like GitHub), with all its files and history",git clone https://github.com/user/project.git
+Git,git log,"Lists every commit in the project with its ID, author, date and message",git log
+Git,git show,Shows the details and changes applied in a specific commit,git show a1b2c3d
+Git,git branch,"Creates, lists, deletes and renames branches; it doesn't switch or merge them",git branch
+Git,git checkout,Switches to another branch or takes the project back to a previous commit,git checkout main
+Git,git tag,Lists all the tags in the repo; a tag is a name that permanently marks a specific commit,git tag
+Git,git add,Adds files to the staging area so they're included in the next commit,git add file.txt
+Git,git commit,"Saves the staged changes, creating a new version of the project in the local repo","git commit -m ""First change"""
+Git,git push,Uploads commits from the local repo to the remote repo,git push origin master
+Script Basics,#!/bin/bash,"Shebang: the first line of a script, telling the system to run it with Bash",#!/bin/bash   (first line of script.sh)
+Script Basics,exit,"Closes the current session or leaves an elevated one (like root); in a script, ends it with an exit code: 0 if it worked, anything else if it failed",exit 0
+Script Basics,$(),Runs the command inside the parentheses and uses its output (command substitution),"echo ""I'm in $(pwd)"""
+Script Basics,(command),"Runs the command in a subshell, a child process separate from the main script",(ping -c 1 192.168.1.1) &
+Variables & Arithmetic,"variable=""Hello""",Declares a variable and assigns it some text (no spaces around the =),"greeting=""Hello""; echo $greeting"
+Variables & Arithmetic,$variable or ${variable},Reads a variable's value; the braces mark where the name ends when it's stuck to other text,"file=""data""; echo ""${file}_backup.txt"""
+Variables & Arithmetic,${color_variable},Variables that hold ANSI color codes; put one before the text to color it and close with the end-color variable,"greenColour=""\e[0;32m\033[1m""; endColour=""\033[0m\e[0m""; echo -e ""${greenColour}[+] Hello${endColour}"""
+Variables & Arithmetic,declare,"Declares variables with attributes, for example making them integers",declare -i counter=0
+Variables & Arithmetic,let,Does arithmetic on variables,let counter+=1
+Variables & Arithmetic,read,Saves what the user types into a variable,"echo -n ""Bet: ""; read initial_bet"
+Variables & Arithmetic,$RANDOM,Returns a random number between 0 and 32767 each time it's read,echo $RANDOM
+Variables & Arithmetic,%,Modulo: returns the remainder of a division; handy to limit a range or tell even (0) from odd (1),echo $(($RANDOM % 37))
+Arguments & Options,$0,Holds the name of the script as it was called from the terminal,echo $0
+Arguments & Options,"$1, $2...","The first, second (and so on) argument passed on the command line",./script.sh hello world → echo $1
+Arguments & Options,$#,Holds the number of arguments passed on the command line,"echo ""Got $# arguments"""
+Arguments & Options,$*,Holds all the arguments passed on the command line in a single variable,"echo ""Arguments: $*"""
+Arguments & Options,getopts,"Processes the options a script receives (-m, -h...) one at a time; usually used inside a while loop","while getopts ""m:h"" arg; do ... done"
+Conditionals,if,Runs a block if the condition is true and another one (else) if it isn't; closed with fi,"if [ $n -eq 1 ]; then echo ""one""; else echo ""other""; fi"
+Conditionals,case,Compares a variable against several patterns and runs the block that matches; closed with esac,"case $arg in m) echo ""option m"";; esac"
+Loops & Sequences,for,"Loops over a list of items one by one, running a block of code for each",for i in $(seq 1 5); do echo $i; done
+Loops & Sequences,while,Repeats a block of code while a condition is true,while [ $i -lt 5 ]; do echo $i; i=$((i+1)); done
+Loops & Sequences,seq,"Generates a sequence of numbers within a range, handy for loops",seq 1 10
+Loops & Sequences,{0000..9999},"Brace expansion: generates a sequence of values (here 0000 to 9999), useful as a counter in loops",for i in {0000..9999}; do echo $i; done
+Functions & Signals,function name(){ commands },Defines a custom function that groups several commands under one name,"function greet(){ echo ""Hello $1""; }"
+Functions & Signals,trap,Catches a signal (like Ctrl+C) and runs a function instead of stopping the script right away,trap ctrl_c INT
+"Jobs, Temp Files & Terminal",wait,Waits for one or more background processes to finish before continuing,sleep 5 & wait
+"Jobs, Temp Files & Terminal",mktemp,"Creates a temporary file with a unique name, avoiding clashes with other files",mktemp
+"Jobs, Temp Files & Terminal",tput,"Controls the terminal, for example hiding or showing the cursor",tput civis
+Networking in Bash,/dev/tcp/$ip/$port,"Special Bash path that opens a TCP connection to an IP and port as if it were a file, no netcat needed","echo '' > /dev/tcp/127.0.0.1/22 && echo ""open"""
+Networking in Bash,curl,"Sends requests to a URL from the terminal (HTTP, HTTPS, etc.) and shows the response",curl -s -X GET https://example.com
+Helper Tools,batcat,"Shows a file like cat, but with syntax highlighting and line numbers",batcat script.sh
+Helper Tools,js-beautify,Formats minified JavaScript or JSON so it's readable (line breaks and indentation),curl -s -X GET https://example.com/bundle.js | js-beautify
