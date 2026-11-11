@@ -2,7 +2,7 @@
 
 > Store values in variables, read them back and do math with them.
 
-**Bash Scripting** · **9** commands · **6** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **8** commands · **2** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -16,7 +16,6 @@
 | [`$(( ))`](#cmd-sym-36-40-40-41-41) | Arithmetic expansion: does the math inside and returns the result |
 | [`read`](#cmd-read) | Saves what the user types into a variable |
 | [`$RANDOM`](#cmd-random) | Returns a random number between 0 and 32767 each time it's read |
-| [`%`](#cmd-sym-37) | Modulo: returns the remainder of a division; handy to limit a range or tell even (0) from odd (1) |
 
 ---
 
@@ -29,11 +28,6 @@ Declares a variable and assigns it some text (no spaces around the =)
 ```bash
 greeting="Hello"; echo $greeting
 ```
-
-| Parameter | What it does | Example |
-|:--|:--|:--|
-| `=$other_variable` | Copies another variable's value into this one | `backup_bet=$initial_bet` |
-| `+="text"` | With text, appends a string to the end of the current value | `bad_plays+="$random_number "` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 
@@ -99,10 +93,6 @@ Does arithmetic on variables
 let counter+=1
 ```
 
-| Parameter | What it does | Example |
-|:--|:--|:--|
-| `+=` | Adds a value to what the variable already holds | `let counter+=1` |
-
 <sub>[⬆ Back to top](#commands)</sub>
 
 ---
@@ -116,10 +106,6 @@ Arithmetic expansion: does the math inside and returns the result
 ```bash
 money=$(($money - $initial_bet))
 ```
-
-| Parameter | What it does | Example |
-|:--|:--|:--|
-| `+ - *` | Add, subtract and multiply inside the arithmetic expansion | `echo $((5 + 3)) $((5 - 3)) $((5 * 3))` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 
@@ -147,20 +133,6 @@ Returns a random number between 0 and 32767 each time it's read
 
 ```bash
 echo $RANDOM
-```
-
-<sub>[⬆ Back to top](#commands)</sub>
-
----
-
-<a id="cmd-sym-37"></a>
-
-## `%`
-
-Modulo: returns the remainder of a division; handy to limit a range or tell even (0) from odd (1)
-
-```bash
-echo $(($RANDOM % 37))
 ```
 
 <sub>[⬆ Back to top](#commands)</sub>

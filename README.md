@@ -4,7 +4,7 @@
 
 **My notes from S4vitar's Linux fundamentals course: Linux commands and Bash scripting, grouped by what they do, with copy-ready examples.**
 
-![Commands](https://img.shields.io/badge/commands-137-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-167-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-23-8250df?style=for-the-badge)
+![Commands](https://img.shields.io/badge/commands-147-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-156-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-24-8250df?style=for-the-badge)
 
 🌐 **Searchable web version:** [`docs/index.html`](docs/index.html)
 
@@ -38,7 +38,8 @@
 | | Category | What's inside | Commands |
 |:-:|:--|:--|:--|
 | 📜 | **[Script Basics](notes/script-basics.md)** | The building blocks of every script: the shebang, exit codes, command substitution and subshells. | `#!/bin/bash` `exit` `$()` `(command)` `#` |
-| 📦 | **[Variables & Arithmetic](notes/variables-arithmetic.md)** | Store values in variables, read them back and do math with them. | `variable="Hello"` `$variable or ${variable}` `${color_variable}` `declare` `let` `$(( ))` `read` `$RANDOM` `%` |
+| 📦 | **[Variables & Arithmetic](notes/variables-arithmetic.md)** | Store values in variables, read them back and do math with them. | `variable="Hello"` `$variable or ${variable}` `${color_variable}` `declare` `let` `$(( ))` `read` `$RANDOM` |
+| ➗ | **[Operators](notes/operators.md)** | Assign, do math, compare numbers and text, and negate conditions. | `=` `+=` `+ - *` `%` `-eq` `-ne` `-gt` `-lt` `-le` `==` `!` |
 | 🎯 | **[Arguments & Options](notes/arguments-options.md)** | Read what's passed to your script: positional arguments and flags parsed with getopts. | `$0` `$1, $2...` `$#` `$*` `getopts` |
 | 🔀 | **[Conditionals](notes/conditionals.md)** | Make decisions with if and case. | `if` `case` |
 | 🔁 | **[Loops & Sequences](notes/loops-sequences.md)** | Repeat work with for and while, and generate sequences to loop over. | `for` `while` `seq` `{0000..9999}` `break` |
@@ -162,6 +163,7 @@
 | [`whoami`](notes/users-groups.md#cmd-whoami) | Shows the name of the user you're currently logged in as | 👤 Users & Groups |
 | [`xargs`](notes/searching.md#cmd-xargs) | Takes a command's output and uses it as the arguments of another command | 🔍 Searching |
 | [`xxd`](notes/binary-encoding-compression.md#cmd-xxd) | Shows a file's contents in hexadecimal | 🧬 Binary, Encoding & Compression |
+| [`!`](notes/operators.md#cmd-sym-33) | Negates the condition: [ ! $a -le 0 ] is the same as [ $a -gt 0 ] | ➗ Operators |
 | [`!$`](notes/shell-environment.md#cmd-sym-33-36) | Stands for the last argument of the previous command, so you can reuse it | 🐚 Shell & Environment |
 | [`!?`](notes/shell-environment.md#cmd-sym-33-63) | Finds the most recent command in your history containing the given text and runs it again | 🐚 Shell & Environment |
 | [`#`](notes/script-basics.md#cmd-sym-35) | Comments out a line so it doesn't run; handy to hide debug traces without deleting them | 📜 Script Basics |
@@ -175,14 +177,23 @@
 | [`$RANDOM`](notes/variables-arithmetic.md#cmd-random) | Returns a random number between 0 and 32767 each time it's read | 📦 Variables & Arithmetic |
 | [`$variable or ${variable}`](notes/variables-arithmetic.md#cmd-variable-or-variable) | Reads a variable's value; the braces mark where the name ends when it's stuck to other text | 📦 Variables & Arithmetic |
 | [`${color_variable}`](notes/variables-arithmetic.md#cmd-color-variable) | Variables that hold ANSI color codes; put one before the text to color it and close with the end-color variable | 📦 Variables & Arithmetic |
-| [`%`](notes/variables-arithmetic.md#cmd-sym-37) | Modulo: returns the remainder of a division; handy to limit a range or tell even (0) from odd (1) | 📦 Variables & Arithmetic |
+| [`%`](notes/operators.md#cmd-sym-37) | Modulo: returns the remainder of a division; handy to limit a range or tell even (0) from odd (1) | ➗ Operators |
 | [`&`](notes/pipes-redirection-operators.md#cmd-sym-38) | Runs the command in the background, leaving the terminal free | 🔀 Pipes, Redirection & Operators |
 | [`&&`](notes/pipes-redirection-operators.md#cmd-sym-38-38) | Runs the next command only if the previous one succeeded | 🔀 Pipes, Redirection & Operators |
 | [`&>/dev/null`](notes/pipes-redirection-operators.md#cmd-dev-null) | Sends both normal output and errors to /dev/null, hiding everything | 🔀 Pipes, Redirection & Operators |
 | [`(command)`](notes/script-basics.md#cmd-command) | Runs the command in a subshell, a child process separate from the main script | 📜 Script Basics |
 | [`*`](notes/navigation-files.md#cmd-sym-42) | Wildcard that matches anything, to select several files at once | 📁 Navigation & Files |
+| [`+ - *`](notes/operators.md#cmd-sym-43-45-42) | Add, subtract and multiply inside $(( )) or let | ➗ Operators |
+| [`+=`](notes/operators.md#cmd-sym-43-61) | Adds to what the variable already holds: sums with numbers (with let), appends with text | ➗ Operators |
+| [`-eq`](notes/operators.md#cmd-eq) | Checks whether two numbers are equal | ➗ Operators |
+| [`-gt`](notes/operators.md#cmd-gt) | Checks whether the first number is greater than the second | ➗ Operators |
+| [`-le`](notes/operators.md#cmd-le) | Checks whether the first number is less than or equal to the second | ➗ Operators |
+| [`-lt`](notes/operators.md#cmd-lt) | Checks whether the first number is less than the second | ➗ Operators |
+| [`-ne`](notes/operators.md#cmd-ne) | Checks whether two numbers are different (not equal) | ➗ Operators |
 | [`/dev/tcp/$ip/$port`](notes/networking-in-bash.md#cmd-dev-tcp-ip-port) | Special Bash path that opens a TCP connection to an IP and port as if it were a file, no netcat needed | 🌐 Networking in Bash |
 | [`;`](notes/pipes-redirection-operators.md#cmd-sym-59) | Runs commands in sequence whether or not the previous one failed | 🔀 Pipes, Redirection & Operators |
+| [`=`](notes/operators.md#cmd-sym-61) | Assigns a value to a variable, or copies another variable's value (no spaces around it) | ➗ Operators |
+| [`==`](notes/operators.md#cmd-sym-61-61) | Compares two text strings to check they're equal | ➗ Operators |
 | [`>`](notes/pipes-redirection-operators.md#cmd-sym-62) | Redirects output to a file, overwriting its contents | 🔀 Pipes, Redirection & Operators |
 | [`>>`](notes/pipes-redirection-operators.md#cmd-sym-62-62) | Redirects output to a file, appending it to the end | 🔀 Pipes, Redirection & Operators |
 | [`{0000..9999}`](notes/loops-sequences.md#cmd-0000-9999) | Brace expansion: generates a sequence of values (here 0000 to 9999), useful as a counter in loops | 🔁 Loops & Sequences |

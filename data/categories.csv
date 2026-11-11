@@ -15,6 +15,7 @@ Linux Commands,System & Packages,📦,"Update the system, manage packages and ch
 Linux Commands,Git,🌿,"Version control: clone projects, explore history, work with branches and publish changes."
 Bash Scripting,Script Basics,📜,"The building blocks of every script: the shebang, exit codes, command substitution and subshells."
 Bash Scripting,Variables & Arithmetic,📦,"Store values in variables, read them back and do math with them."
+Bash Scripting,Operators,➗,"Assign, do math, compare numbers and text, and negate conditions."
 Bash Scripting,Arguments & Options,🎯,Read what's passed to your script: positional arguments and flags parsed with getopts.
 Bash Scripting,Conditionals,🔀,Make decisions with if and case.
 Bash Scripting,Loops & Sequences,🔁,"Repeat work with for and while, and generate sequences to loop over."

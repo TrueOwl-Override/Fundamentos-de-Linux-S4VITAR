@@ -114,7 +114,17 @@ Variables & Arithmetic,let,Does arithmetic on variables,let counter+=1
 Variables & Arithmetic,$(( )),Arithmetic expansion: does the math inside and returns the result,money=$(($money - $initial_bet))
 Variables & Arithmetic,read,Saves what the user types into a variable,"echo -n ""Bet: ""; read initial_bet"
 Variables & Arithmetic,$RANDOM,Returns a random number between 0 and 32767 each time it's read,echo $RANDOM
-Variables & Arithmetic,%,Modulo: returns the remainder of a division; handy to limit a range or tell even (0) from odd (1),echo $(($RANDOM % 37))
+Operators,=,"Assigns a value to a variable, or copies another variable's value (no spaces around it)",backup_bet=$initial_bet
+Operators,+=,"Adds to what the variable already holds: sums with numbers (with let), appends with text","let counter+=1; bad_plays+=""$random_number """
+Operators,+ - *,"Add, subtract and multiply inside $(( )) or let",echo $((5 + 3)) $((5 - 3)) $((5 * 3))
+Operators,%,Modulo: returns the remainder of a division; handy to limit a range or tell even (0) from odd (1),echo $(($RANDOM % 37))
+Operators,-eq,Checks whether two numbers are equal,"if [ $a -eq $b ]; then echo ""equal""; fi"
+Operators,-ne,Checks whether two numbers are different (not equal),"if [ $a -ne $b ]; then echo ""different""; fi"
+Operators,-gt,Checks whether the first number is greater than the second,"if [ ""$money"" -gt ""$max_money"" ]; then echo ""new max""; fi"
+Operators,-lt,Checks whether the first number is less than the second,"if [ $a -lt $b ]; then echo ""less""; fi"
+Operators,-le,Checks whether the first number is less than or equal to the second,"if [ $a -le $b ]; then echo ""less or equal""; fi"
+Operators,==,Compares two text strings to check they're equal,"if [ ""$choice"" == ""even"" ]; then echo ""even""; fi"
+Operators,!,Negates the condition: [ ! $a -le 0 ] is the same as [ $a -gt 0 ],"if [ ! ""$money"" -le 0 ]; then echo ""still have money""; fi"
 Arguments & Options,$0,Holds the name of the script as it was called from the terminal,echo $0
 Arguments & Options,"$1, $2...","The first, second (and so on) argument passed on the command line",./script.sh hello world → echo $1
 Arguments & Options,$#,Holds the number of arguments passed on the command line,"echo ""Got $# arguments"""
