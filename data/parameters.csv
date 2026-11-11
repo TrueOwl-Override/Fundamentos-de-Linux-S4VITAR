@@ -134,9 +134,21 @@ sleep,0.4,Accepts decimals to pause for less than a second,sleep 0.4
 exit,0,"Ends the script with exit code 0, signalling success",exit 0
 exit,1,"Ends the script with exit code 1, signalling an error",exit 1
 declare,-i,"Makes the variable an integer, so its value is treated as a number",declare -i counter=0
+let,+=,Adds a value to what the variable already holds,let counter+=1
+"variable=""Hello""",=$other_variable,Copies another variable's value into this one,backup_bet=$initial_bet
+"variable=""Hello""","+=""text""","With text, appends a string to the end of the current value","bad_plays+=""$random_number """
 $variable or ${variable},"""$variable text""",Sticks fixed text right after a variable's value,"echo ""$bad_plays]"""
+$(( )),+ - *,"Add, subtract and multiply inside the arithmetic expansion",echo $((5 + 3)) $((5 - 3)) $((5 * 3))
+$(( )),%,"Modulo: the remainder of a division, for example to limit a random number to a range",echo $(($RANDOM % 37))
 getopts,"""m:h"" arg","List of valid options, stored in arg; a "":"" after a letter means that option takes a value, which ends up in $OPTARG","while getopts ""m:h"" arg; do case $arg in m) name=$OPTARG;; h) help;; esac; done"
 getopts,$OPTARG,Holds the value that comes with the option getopts is currently processing,"while getopts ""m:h"" arg; do case $arg in m) name=$OPTARG;; esac; done"
+if,-eq,Checks whether two numbers are equal,"if [ $a -eq $b ]; then echo ""equal""; fi"
+if,-ne,Checks whether two numbers are different (not equal),"if [ $a -ne $b ]; then echo ""different""; fi"
+if,-gt,Checks whether the first number is greater than the second,"if [ $a -gt $b ]; then echo ""greater""; fi"
+if,-lt,Checks whether the first number is less than the second,"if [ $a -lt $b ]; then echo ""less""; fi"
+if,-le,Checks whether the first number is less than or equal to the second,"if [ $a -le $b ]; then echo ""less or equal""; fi"
+if,==,Compares two text strings to check they're equal,"if [ ""$choice"" == ""even"" ]; then echo ""even""; fi"
+if,!,Negates the condition: [ ! $a -le 0 ] is the same as [ $a -gt 0 ],"if [ ! ""$money"" -le 0 ]; then echo ""still have money""; fi"
 if,-f,Checks whether the file exists and is a regular file (not a folder),"if [ -f file.txt ]; then echo ""exists""; fi"
 if,elif,"Inside an if, checks another condition when the previous one wasn't met (else if)","if [ $n -eq 1 ]; then echo ""one""; elif [ $n -eq 2 ]; then echo ""two""; else echo ""other""; fi"
 if,else,Runs a block when none of the if or elif conditions were met; goes right before fi,"if [ -f file.txt ]; then echo ""exists""; else echo ""missing""; fi"

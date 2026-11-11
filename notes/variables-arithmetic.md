@@ -2,7 +2,7 @@
 
 > Store values in variables, read them back and do math with them.
 
-**Bash Scripting** · **8** commands · **2** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **8** commands · **7** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -28,6 +28,11 @@ Declares a variable and assigns it some text (no spaces around the =)
 ```bash
 greeting="Hello"; echo $greeting
 ```
+
+| Parameter | What it does | Example |
+|:--|:--|:--|
+| `=$other_variable` | Copies another variable's value into this one | `backup_bet=$initial_bet` |
+| `+="text"` | With text, appends a string to the end of the current value | `bad_plays+="$random_number "` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 
@@ -93,6 +98,10 @@ Does arithmetic on variables
 let counter+=1
 ```
 
+| Parameter | What it does | Example |
+|:--|:--|:--|
+| `+=` | Adds a value to what the variable already holds | `let counter+=1` |
+
 <sub>[⬆ Back to top](#commands)</sub>
 
 ---
@@ -106,6 +115,11 @@ Arithmetic expansion: does the math inside and returns the result
 ```bash
 money=$(($money - $initial_bet))
 ```
+
+| Parameter | What it does | Example |
+|:--|:--|:--|
+| `+ - *` | Add, subtract and multiply inside the arithmetic expansion | `echo $((5 + 3)) $((5 - 3)) $((5 * 3))` |
+| `%` | Modulo: the remainder of a division, for example to limit a random number to a range | `echo $(($RANDOM % 37))` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 
