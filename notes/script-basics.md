@@ -2,7 +2,7 @@
 
 > The building blocks of every script: the shebang, exit codes, command substitution and subshells.
 
-**Bash Scripting** · **4** commands · **2** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **5** commands · **2** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -12,6 +12,7 @@
 | [`exit`](#cmd-exit) | Closes the current session or leaves an elevated one (like root); in a script, ends it with an exit code: 0 if it worked, anything else if it failed |
 | [`$()`](#cmd-sym-36-40-41) | Runs the command inside the parentheses and uses its output (command substitution) |
 | [`(command)`](#cmd-command) | Runs the command in a subshell, a child process separate from the main script |
+| [`#`](#cmd-sym-35) | Comments out a line so it doesn't run; handy to hide debug traces without deleting them |
 
 ---
 
@@ -70,6 +71,20 @@ Runs the command in a subshell, a child process separate from the main script
 
 ```bash
 (ping -c 1 192.168.1.1) &
+```
+
+<sub>[⬆ Back to top](#commands)</sub>
+
+---
+
+<a id="cmd-sym-35"></a>
+
+## `#`
+
+Comments out a line so it doesn't run; handy to hide debug traces without deleting them
+
+```bash
+# echo "debug: $number"
 ```
 
 <sub>[⬆ Back to top](#commands)</sub>

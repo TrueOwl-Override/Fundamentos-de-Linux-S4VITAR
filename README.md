@@ -4,7 +4,7 @@
 
 **My notes from S4vitar's Linux fundamentals course: Linux commands and Bash scripting, grouped by what they do, with copy-ready examples.**
 
-![Commands](https://img.shields.io/badge/commands-136-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-165-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-23-8250df?style=for-the-badge)
+![Commands](https://img.shields.io/badge/commands-137-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-167-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-23-8250df?style=for-the-badge)
 
 🌐 **Searchable web version:** [`docs/index.html`](docs/index.html)
 
@@ -37,7 +37,7 @@
 
 | | Category | What's inside | Commands |
 |:-:|:--|:--|:--|
-| 📜 | **[Script Basics](notes/script-basics.md)** | The building blocks of every script: the shebang, exit codes, command substitution and subshells. | `#!/bin/bash` `exit` `$()` `(command)` |
+| 📜 | **[Script Basics](notes/script-basics.md)** | The building blocks of every script: the shebang, exit codes, command substitution and subshells. | `#!/bin/bash` `exit` `$()` `(command)` `#` |
 | 📦 | **[Variables & Arithmetic](notes/variables-arithmetic.md)** | Store values in variables, read them back and do math with them. | `variable="Hello"` `$variable or ${variable}` `${color_variable}` `declare` `let` `$(( ))` `read` `$RANDOM` `%` |
 | 🎯 | **[Arguments & Options](notes/arguments-options.md)** | Read what's passed to your script: positional arguments and flags parsed with getopts. | `$0` `$1, $2...` `$#` `$*` `getopts` |
 | 🔀 | **[Conditionals](notes/conditionals.md)** | Make decisions with if and case. | `if` `case` |
@@ -164,6 +164,7 @@
 | [`xxd`](notes/binary-encoding-compression.md#cmd-xxd) | Shows a file's contents in hexadecimal | 🧬 Binary, Encoding & Compression |
 | [`!$`](notes/shell-environment.md#cmd-sym-33-36) | Stands for the last argument of the previous command, so you can reuse it | 🐚 Shell & Environment |
 | [`!?`](notes/shell-environment.md#cmd-sym-33-63) | Finds the most recent command in your history containing the given text and runs it again | 🐚 Shell & Environment |
+| [`#`](notes/script-basics.md#cmd-sym-35) | Comments out a line so it doesn't run; handy to hide debug traces without deleting them | 📜 Script Basics |
 | [`#!/bin/bash`](notes/script-basics.md#cmd-bin-bash) | Shebang: the first line of a script, telling the system to run it with Bash | 📜 Script Basics |
 | [`$#`](notes/arguments-options.md#cmd-sym-36-35) | Holds the number of arguments passed on the command line | 🎯 Arguments & Options |
 | [`$(( ))`](notes/variables-arithmetic.md#cmd-sym-36-40-40-41-41) | Arithmetic expansion: does the math inside and returns the result | 📦 Variables & Arithmetic |

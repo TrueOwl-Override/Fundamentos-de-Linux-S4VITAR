@@ -2,7 +2,7 @@
 
 > Store values in variables, read them back and do math with them.
 
-**Bash Scripting** · **9** commands · **4** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **9** commands · **6** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -33,6 +33,7 @@ greeting="Hello"; echo $greeting
 | Parameter | What it does | Example |
 |:--|:--|:--|
 | `=$other_variable` | Copies another variable's value into this one | `backup_bet=$initial_bet` |
+| `+="text"` | With text, appends a string to the end of the current value | `bad_plays+="$random_number "` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 
@@ -47,6 +48,10 @@ Reads a variable's value; the braces mark where the name ends when it's stuck to
 ```bash
 file="data"; echo "${file}_backup.txt"
 ```
+
+| Parameter | What it does | Example |
+|:--|:--|:--|
+| `"$variable text"` | Sticks fixed text right after a variable's value | `echo "$bad_plays]"` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 

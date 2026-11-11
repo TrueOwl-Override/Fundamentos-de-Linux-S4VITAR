@@ -136,6 +136,8 @@ exit,1,"Ends the script with exit code 1, signalling an error",exit 1
 declare,-i,"Makes the variable an integer, so its value is treated as a number",declare -i counter=0
 let,+=,Adds a value to what the variable already holds,let counter+=1
 "variable=""Hello""",=$other_variable,Copies another variable's value into this one,backup_bet=$initial_bet
+"variable=""Hello""","+=""text""","With text, appends a string to the end of the current value","bad_plays+=""$random_number """
+$variable or ${variable},"""$variable text""",Sticks fixed text right after a variable's value,"echo ""$bad_plays]"""
 $(( )),+ - *,"Add, subtract and multiply inside the arithmetic expansion",echo $((5 + 3)) $((5 - 3)) $((5 * 3))
 getopts,"""m:h"" arg","List of valid options, stored in arg; a "":"" after a letter means that option takes a value, which ends up in $OPTARG","while getopts ""m:h"" arg; do case $arg in m) name=$OPTARG;; h) help;; esac; done"
 getopts,$OPTARG,Holds the value that comes with the option getopts is currently processing,"while getopts ""m:h"" arg; do case $arg in m) name=$OPTARG;; esac; done"
