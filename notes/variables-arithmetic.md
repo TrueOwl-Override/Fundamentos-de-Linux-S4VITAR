@@ -2,7 +2,7 @@
 
 > Store values in variables, read them back and do math with them.
 
-**Bash Scripting** · **8** commands · **2** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **9** commands · **4** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -13,6 +13,7 @@
 | [`${color_variable}`](#cmd-color-variable) | Variables that hold ANSI color codes; put one before the text to color it and close with the end-color variable |
 | [`declare`](#cmd-declare) | Declares variables with attributes, for example making them integers |
 | [`let`](#cmd-let) | Does arithmetic on variables |
+| [`$(( ))`](#cmd-sym-36-40-40-41-41) | Arithmetic expansion: does the math inside and returns the result |
 | [`read`](#cmd-read) | Saves what the user types into a variable |
 | [`$RANDOM`](#cmd-random) | Returns a random number between 0 and 32767 each time it's read |
 | [`%`](#cmd-sym-37) | Modulo: returns the remainder of a division; handy to limit a range or tell even (0) from odd (1) |
@@ -28,6 +29,10 @@ Declares a variable and assigns it some text (no spaces around the =)
 ```bash
 greeting="Hello"; echo $greeting
 ```
+
+| Parameter | What it does | Example |
+|:--|:--|:--|
+| `=$other_variable` | Copies another variable's value into this one | `backup_bet=$initial_bet` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 
@@ -92,6 +97,24 @@ let counter+=1
 | Parameter | What it does | Example |
 |:--|:--|:--|
 | `+=` | Adds a value to what the variable already holds | `let counter+=1` |
+
+<sub>[⬆ Back to top](#commands)</sub>
+
+---
+
+<a id="cmd-sym-36-40-40-41-41"></a>
+
+## `$(( ))`
+
+Arithmetic expansion: does the math inside and returns the result
+
+```bash
+money=$(($money - $initial_bet))
+```
+
+| Parameter | What it does | Example |
+|:--|:--|:--|
+| `+ - *` | Add, subtract and multiply inside the arithmetic expansion | `echo $((5 + 3)) $((5 - 3)) $((5 * 3))` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 

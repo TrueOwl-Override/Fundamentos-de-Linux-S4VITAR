@@ -2,7 +2,7 @@
 
 > The building blocks of every script: the shebang, exit codes, command substitution and subshells.
 
-**Bash Scripting** · **4** commands · **1** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **4** commands · **2** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -41,6 +41,7 @@ exit 0
 
 | Parameter | What it does | Example |
 |:--|:--|:--|
+| `0` | Ends the script with exit code 0, signalling success | `exit 0` |
 | `1` | Ends the script with exit code 1, signalling an error | `exit 1` |
 
 <sub>[⬆ Back to top](#commands)</sub>

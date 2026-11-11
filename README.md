@@ -4,7 +4,7 @@
 
 **My notes from S4vitar's Linux fundamentals course: Linux commands and Bash scripting, grouped by what they do, with copy-ready examples.**
 
-![Commands](https://img.shields.io/badge/commands-134-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-157-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-23-8250df?style=for-the-badge)
+![Commands](https://img.shields.io/badge/commands-136-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-165-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-23-8250df?style=for-the-badge)
 
 🌐 **Searchable web version:** [`docs/index.html`](docs/index.html)
 
@@ -38,10 +38,10 @@
 | | Category | What's inside | Commands |
 |:-:|:--|:--|:--|
 | 📜 | **[Script Basics](notes/script-basics.md)** | The building blocks of every script: the shebang, exit codes, command substitution and subshells. | `#!/bin/bash` `exit` `$()` `(command)` |
-| 📦 | **[Variables & Arithmetic](notes/variables-arithmetic.md)** | Store values in variables, read them back and do math with them. | `variable="Hello"` `$variable or ${variable}` `${color_variable}` `declare` `let` `read` `$RANDOM` `%` |
+| 📦 | **[Variables & Arithmetic](notes/variables-arithmetic.md)** | Store values in variables, read them back and do math with them. | `variable="Hello"` `$variable or ${variable}` `${color_variable}` `declare` `let` `$(( ))` `read` `$RANDOM` `%` |
 | 🎯 | **[Arguments & Options](notes/arguments-options.md)** | Read what's passed to your script: positional arguments and flags parsed with getopts. | `$0` `$1, $2...` `$#` `$*` `getopts` |
 | 🔀 | **[Conditionals](notes/conditionals.md)** | Make decisions with if and case. | `if` `case` |
-| 🔁 | **[Loops & Sequences](notes/loops-sequences.md)** | Repeat work with for and while, and generate sequences to loop over. | `for` `while` `seq` `{0000..9999}` |
+| 🔁 | **[Loops & Sequences](notes/loops-sequences.md)** | Repeat work with for and while, and generate sequences to loop over. | `for` `while` `seq` `{0000..9999}` `break` |
 | 🧩 | **[Functions & Signals](notes/functions-signals.md)** | Group commands into functions and react to signals like Ctrl+C. | `function name(){ commands }` `trap` |
 | ⚙️ | **[Jobs, Temp Files & Terminal](notes/jobs-temp-files-terminal.md)** | Wait for background jobs, set time limits, create temp files and control the cursor. | `wait` `mktemp` `tput` |
 | 🌐 | **[Networking in Bash](notes/networking-in-bash.md)** | Open TCP connections from pure Bash and make HTTP requests. | `/dev/tcp/$ip/$port` `curl` |
@@ -61,6 +61,7 @@
 | [`bash`](notes/shell-environment.md#cmd-bash) | Bash, the shell that runs what you type; launching it starts a new shell, useful to get an interactive shell, run scripts or escape restricted shells | 🐚 Shell & Environment |
 | [`batcat`](notes/helper-tools.md#cmd-batcat) | Shows a file like cat, but with syntax highlighting and line numbers | 🛠️ Helper Tools |
 | [`bc`](notes/binary-encoding-compression.md#cmd-bc) | Terminal calculator; does arithmetic and converts numbers between bases (hexadecimal, decimal) | 🧬 Binary, Encoding & Compression |
+| [`break`](notes/loops-sequences.md#cmd-break) | Leaves only the current loop; the script keeps running after it | 🔁 Loops & Sequences |
 | [`case`](notes/conditionals.md#cmd-case) | Compares a variable against several patterns and runs the block that matches; closed with esac | 🔀 Conditionals |
 | [`cat`](notes/viewing-editing-files.md#cmd-cat) | Prints a file's contents to the terminal | 📝 Viewing & Editing Files |
 | [`cd`](notes/navigation-files.md#cmd-cd) | Changes directory | 📁 Navigation & Files |
@@ -165,6 +166,7 @@
 | [`!?`](notes/shell-environment.md#cmd-sym-33-63) | Finds the most recent command in your history containing the given text and runs it again | 🐚 Shell & Environment |
 | [`#!/bin/bash`](notes/script-basics.md#cmd-bin-bash) | Shebang: the first line of a script, telling the system to run it with Bash | 📜 Script Basics |
 | [`$#`](notes/arguments-options.md#cmd-sym-36-35) | Holds the number of arguments passed on the command line | 🎯 Arguments & Options |
+| [`$(( ))`](notes/variables-arithmetic.md#cmd-sym-36-40-40-41-41) | Arithmetic expansion: does the math inside and returns the result | 📦 Variables & Arithmetic |
 | [`$()`](notes/script-basics.md#cmd-sym-36-40-41) | Runs the command inside the parentheses and uses its output (command substitution) | 📜 Script Basics |
 | [`$*`](notes/arguments-options.md#cmd-sym-36-42) | Holds all the arguments passed on the command line in a single variable | 🎯 Arguments & Options |
 | [`$0`](notes/arguments-options.md#cmd-0) | Holds the name of the script as it was called from the terminal | 🎯 Arguments & Options |

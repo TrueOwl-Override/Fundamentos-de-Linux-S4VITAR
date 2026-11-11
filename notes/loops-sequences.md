@@ -2,7 +2,7 @@
 
 > Repeat work with for and while, and generate sequences to loop over.
 
-**Bash Scripting** · **4** commands · **4** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **5** commands · **4** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -12,6 +12,7 @@
 | [`while`](#cmd-while) | Repeats a block of code while a condition is true |
 | [`seq`](#cmd-seq) | Generates a sequence of numbers within a range, handy for loops |
 | [`{0000..9999}`](#cmd-0000-9999) | Brace expansion: generates a sequence of values (here 0000 to 9999), useful as a counter in loops |
+| [`break`](#cmd-break) | Leaves only the current loop; the script keeps running after it |
 
 ---
 
@@ -75,6 +76,20 @@ Brace expansion: generates a sequence of values (here 0000 to 9999), useful as a
 
 ```bash
 for i in {0000..9999}; do echo $i; done
+```
+
+<sub>[⬆ Back to top](#commands)</sub>
+
+---
+
+<a id="cmd-break"></a>
+
+## `break`
+
+Leaves only the current loop; the script keeps running after it
+
+```bash
+while true; do break; done; echo "out of the loop"
 ```
 
 <sub>[⬆ Back to top](#commands)</sub>

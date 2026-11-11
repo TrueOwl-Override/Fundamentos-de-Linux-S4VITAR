@@ -2,7 +2,7 @@
 
 > Read files in the terminal, page through output, compare files and edit text.
 
-**Linux Commands** · **8** commands · **21** parameters  ·  [⬅ Back to index](../README.md)
+**Linux Commands** · **8** commands · **23** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -159,5 +159,10 @@ Advanced, powerful text editor with a steeper learning curve than nano
 ```bash
 vi notes.txt
 ```
+
+| Parameter | What it does | Example |
+|:--|:--|:--|
+| `V` | In Vim, selects whole lines (visual line mode) | `V (then move with j/k)` |
+| `> / <` | In Vim, indents (>) or unindents (<) the selected lines | `V, select the lines, then >` |
 
 <sub>[⬆ Back to top](#commands)</sub>
