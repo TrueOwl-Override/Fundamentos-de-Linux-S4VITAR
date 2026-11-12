@@ -4,7 +4,7 @@
 
 **My notes from S4vitar's Linux fundamentals course: Linux commands and Bash scripting, grouped by what they do, with copy-ready examples.**
 
-![Commands](https://img.shields.io/badge/commands-147-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-168-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-24-8250df?style=for-the-badge)
+![Commands](https://img.shields.io/badge/commands-147-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-172-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-24-8250df?style=for-the-badge)
 
 🌐 **Searchable web version:** [`docs/index.html`](docs/index.html)
 

@@ -2,7 +2,7 @@
 
 > Read files in the terminal, page through output, compare files and edit text.
 
-**Linux Commands** · **8** commands · **23** parameters  ·  [⬅ Back to index](../README.md)
+**Linux Commands** · **8** commands · **26** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -164,5 +164,8 @@ vi notes.txt
 |:--|:--|:--|
 | `V` | In Vim, selects whole lines (visual line mode) | `V (then move with j/k)` |
 | `> / <` | In Vim, indents (>) or unindents (<) the selected lines | `V, select the lines, then >` |
+| `y` | In Vim, copies (yanks) the selected lines | `V, select the lines, then y` |
+| `p / P` | In Vim, pastes below (p) or above (P) the current line | `y to copy, move, then p` |
+| `d` | In Vim, deletes (cuts) the selection; paste it back with p | `V, select the lines, then d` |
 
 <sub>[⬆ Back to top](#commands)</sub>

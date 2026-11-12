@@ -2,7 +2,7 @@
 
 > Store values in variables, read them back and do math with them.
 
-**Bash Scripting** · **8** commands · **7** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **8** commands · **8** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -33,6 +33,7 @@ greeting="Hello"; echo $greeting
 |:--|:--|:--|
 | `=$other_variable` | Copies another variable's value into this one | `backup_bet=$initial_bet` |
 | `+="text"` | With text, appends a string to the end of the current value | `bad_plays+="$random_number "` |
+| `=""` | Starts the variable empty, ready to fill it later | `bad_plays=""` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 

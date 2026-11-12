@@ -137,6 +137,7 @@ declare,-i,"Makes the variable an integer, so its value is treated as a number",
 let,+=,Adds a value to what the variable already holds,let counter+=1
 "variable=""Hello""",=$other_variable,Copies another variable's value into this one,backup_bet=$initial_bet
 "variable=""Hello""","+=""text""","With text, appends a string to the end of the current value","bad_plays+=""$random_number """
+"variable=""Hello""","=""""","Starts the variable empty, ready to fill it later","bad_plays="""""
 $variable or ${variable},"""$variable text""",Sticks fixed text right after a variable's value,"echo ""$bad_plays]"""
 $(( )),+ - *,"Add, subtract and multiply inside the arithmetic expansion",echo $((5 + 3)) $((5 - 3)) $((5 * 3))
 $(( )),%,"Modulo: the remainder of a division, for example to limit a random number to a range",echo $(($RANDOM % 37))
@@ -167,3 +168,6 @@ curl,-s,Silent mode: hides the progress bar and error messages,curl -s https://e
 curl,-X GET,"Sets the request's HTTP method (GET, POST, PUT...)",curl -s -X GET https://example.com
 vi,V,"In Vim, selects whole lines (visual line mode)",V (then move with j/k)
 vi,> / <,"In Vim, indents (>) or unindents (<) the selected lines","V, select the lines, then >"
+vi,y,"In Vim, copies (yanks) the selected lines","V, select the lines, then y"
+vi,p / P,"In Vim, pastes below (p) or above (P) the current line","y to copy, move, then p"
+vi,d,"In Vim, deletes (cuts) the selection; paste it back with p","V, select the lines, then d"
