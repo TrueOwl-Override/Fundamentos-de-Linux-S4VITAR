@@ -112,6 +112,8 @@ Variables & Arithmetic,${color_variable},Variables that hold ANSI color codes; p
 Variables & Arithmetic,declare,"Declares variables with attributes, for example making them integers",declare -i counter=0
 Variables & Arithmetic,let,Does arithmetic on variables,let counter+=1
 Variables & Arithmetic,$(( )),Arithmetic expansion: does the math inside and returns the result,money=$(($money - $initial_bet))
+Variables & Arithmetic,array=(1 2 3),"Declares an array (a list of values); in zsh indexes start at 1, so test it in bash",my_array=(1 2 3 4)
+Variables & Arithmetic,unset,Deletes a variable or an element of an array,unset my_array[0]
 Variables & Arithmetic,read,Saves what the user types into a variable,"echo -n ""Bet: ""; read initial_bet"
 Variables & Arithmetic,$RANDOM,Returns a random number between 0 and 32767 each time it's read,echo $RANDOM
 Operators,=,"Assigns a value to a variable, or copies another variable's value (no spaces around it)",backup_bet=$initial_bet

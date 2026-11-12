@@ -2,7 +2,7 @@
 
 > Repeat work with for and while, and generate sequences to loop over.
 
-**Bash Scripting** · **5** commands · **4** parameters  ·  [⬅ Back to index](../README.md)
+**Bash Scripting** · **5** commands · **5** parameters  ·  [⬅ Back to index](../README.md)
 
 <a id="commands"></a>
 
@@ -29,6 +29,7 @@ for i in $(seq 1 5); do echo $i; done
 | Parameter | What it does | Example |
 |:--|:--|:--|
 | `line in; do; done` | Goes through the items of a list one by one and runs the block for each | `for line in $(cat list.txt); do echo $line; done` |
+| `element in ${array[@]}; do; done` | Goes through each element of an array | `for element in ${my_array[@]}; do echo $element; done` |
 
 <sub>[⬆ Back to top](#commands)</sub>
 

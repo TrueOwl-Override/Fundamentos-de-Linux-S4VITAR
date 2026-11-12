@@ -4,7 +4,7 @@
 
 **My notes from S4vitar's Linux fundamentals course: Linux commands and Bash scripting, grouped by what they do, with copy-ready examples.**
 
-![Commands](https://img.shields.io/badge/commands-147-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-172-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-24-8250df?style=for-the-badge)
+![Commands](https://img.shields.io/badge/commands-149-2ea44f?style=for-the-badge) ![Parameters](https://img.shields.io/badge/parameters-185-0969da?style=for-the-badge) ![Categories](https://img.shields.io/badge/categories-24-8250df?style=for-the-badge)
 
 🌐 **Searchable web version:** [`docs/index.html`](docs/index.html)
 
@@ -38,7 +38,7 @@
 | | Category | What's inside | Commands |
 |:-:|:--|:--|:--|
 | 📜 | **[Script Basics](notes/script-basics.md)** | The building blocks of every script: the shebang, exit codes, command substitution and subshells. | `#!/bin/bash` `exit` `$()` `(command)` `#` |
-| 📦 | **[Variables & Arithmetic](notes/variables-arithmetic.md)** | Store values in variables, read them back and do math with them. | `variable="Hello"` `$variable or ${variable}` `${color_variable}` `declare` `let` `$(( ))` `read` `$RANDOM` |
+| 📦 | **[Variables & Arithmetic](notes/variables-arithmetic.md)** | Store values in variables, read them back and do math with them. | `variable="Hello"` `$variable or ${variable}` `${color_variable}` `declare` `let` `$(( ))` `array=(1 2 3)` `unset` `read` `$RANDOM` |
 | ➗ | **[Operators](notes/operators.md)** | Assign, do math, compare numbers and text, and negate conditions. | `=` `+=` `+ - *` `%` `-eq` `-ne` `-gt` `-lt` `-le` `==` `!` |
 | 🎯 | **[Arguments & Options](notes/arguments-options.md)** | Read what's passed to your script: positional arguments and flags parsed with getopts. | `$0` `$1, $2...` `$#` `$*` `getopts` |
 | 🔀 | **[Conditionals](notes/conditionals.md)** | Make decisions with if and case. | `if` `case` |
@@ -57,6 +57,7 @@
 | [`7z`](notes/binary-encoding-compression.md#cmd-7z) | Compresses and extracts .7z archives | 🧬 Binary, Encoding & Compression |
 | [`alias`](notes/shell-environment.md#cmd-alias) | Creates a shortcut so a short word runs a longer command | 🐚 Shell & Environment |
 | [`apt`](notes/system-packages.md#cmd-apt) | Debian's package manager: refreshes the package list (update) and installs available updates (upgrade) | 📦 System & Packages |
+| [`array=(1 2 3)`](notes/variables-arithmetic.md#cmd-array-1-2-3) | Declares an array (a list of values); in zsh indexes start at 1, so test it in bash | 📦 Variables & Arithmetic |
 | [`awk`](notes/text-processing.md#cmd-awk) | Processes and filters text by columns | ✂️ Text Processing |
 | [`base64`](notes/binary-encoding-compression.md#cmd-base64) | Encodes text or a file to Base64, or decodes it back to its original form, depending on the flag | 🧬 Binary, Encoding & Compression |
 | [`bash`](notes/shell-environment.md#cmd-bash) | Bash, the shell that runs what you type; launching it starts a new shell, useful to get an interactive shell, run scripts or escape restricted shells | 🐚 Shell & Environment |
@@ -152,6 +153,7 @@
 | [`tr`](notes/text-processing.md#cmd-tr) | Translates or replaces characters of the incoming text with others | ✂️ Text Processing |
 | [`trap`](notes/functions-signals.md#cmd-trap) | Catches a signal (like Ctrl+C) and runs a function instead of stopping the script right away | 🧩 Functions & Signals |
 | [`uniq`](notes/text-processing.md#cmd-uniq) | Removes consecutive duplicate lines; usually used after sort | ✂️ Text Processing |
+| [`unset`](notes/variables-arithmetic.md#cmd-unset) | Deletes a variable or an element of an array | 📦 Variables & Arithmetic |
 | [`useradd`](notes/users-groups.md#cmd-useradd) | Creates a new user on the system | 👤 Users & Groups |
 | [`usermod`](notes/users-groups.md#cmd-usermod) | Modifies an existing user's properties (group, home, shell) | 👤 Users & Groups |
 | [`variable="Hello"`](notes/variables-arithmetic.md#cmd-variable-hello) | Declares a variable and assigns it some text (no spaces around the =) | 📦 Variables & Arithmetic |

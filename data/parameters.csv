@@ -134,6 +134,17 @@ sleep,0.4,Accepts decimals to pause for less than a second,sleep 0.4
 exit,0,"Ends the script with exit code 0, signalling success",exit 0
 exit,1,"Ends the script with exit code 1, signalling an error",exit 1
 declare,-i,"Makes the variable an integer, so its value is treated as a number",declare -i counter=0
+declare,-a,Declares the variable as an array,declare -a my_array=(1 2 3 4)
+declare,-r,Makes the variable read-only; changing it gives a readonly variable error,"declare -r name=""test"""
+array=(1 2 3),$array,"Without an index, shows only the first element",echo $my_array
+array=(1 2 3),${array[@]},Shows all the elements,echo ${my_array[@]}
+array=(1 2 3),${#array[@]},Gives the total number of elements,echo ${#my_array[@]}
+array=(1 2 3),${array[0]},Gives the first element (the braces are required),echo ${my_array[0]}
+array=(1 2 3),${array[-1]},Gives the last element,echo ${my_array[-1]}
+array=(1 2 3),+=(5),Adds an element to the end,my_array+=(5)
+array=(1 2 3),=(${array[@]}),"Re-indexes the array after an unset, so positions don't stay shifted",my_array=(${my_array[@]})
+unset,array[0],Deletes the first element of the array,unset my_array[0]
+unset,array[-1],Deletes the last element of the array,unset my_array[-1]
 let,+=,Adds a value to what the variable already holds,let counter+=1
 "variable=""Hello""",=$other_variable,Copies another variable's value into this one,backup_bet=$initial_bet
 "variable=""Hello""","+=""text""","With text, appends a string to the end of the current value","bad_plays+=""$random_number """
@@ -158,6 +169,7 @@ while,[ ]; do; done,Repeats the block while the condition inside the brackets is
 while,read line; do; done,Reads input line by line and runs the block for each line,cat list.txt | while read line; do echo $line; done
 while,true,"Infinite loop; it only stops with break, exit or Ctrl+C","while true; do echo ""playing""; sleep 1; done"
 for,line in; do; done,Goes through the items of a list one by one and runs the block for each,for line in $(cat list.txt); do echo $line; done
+for,element in ${array[@]}; do; done,Goes through each element of an array,for element in ${my_array[@]}; do echo $element; done
 function name(){ commands },ctrl_c(){},Defines the ctrl_c function that runs when trap catches Ctrl+C,"function ctrl_c(){ echo ""Exiting...""; exit 1; }"
 trap,ctrl_c INT,Catches the Ctrl+C signal and runs the ctrl_c function instead of stopping the script,trap ctrl_c INT
 timeout,"1 bash -c """"","Runs a command with a 1-second limit; if it doesn't finish, it's cancelled","timeout 1 bash -c ""echo > /dev/tcp/127.0.0.1/22"" && echo ""open"""
@@ -171,3 +183,4 @@ vi,> / <,"In Vim, indents (>) or unindents (<) the selected lines","V, select th
 vi,y,"In Vim, copies (yanks) the selected lines","V, select the lines, then y"
 vi,p / P,"In Vim, pastes below (p) or above (P) the current line","y to copy, move, then p"
 vi,d,"In Vim, deletes (cuts) the selection; paste it back with p","V, select the lines, then d"
+vi,yy,"In Vim, copies the current line (paste it with p)","yy, then p"
